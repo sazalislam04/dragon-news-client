@@ -10,7 +10,6 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [accept, setAccept] = useState(false);
-  const [disable, setDisable] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +42,6 @@ const Register = () => {
 
   const handleAccepted = (event) => {
     setAccept(event.target.checked);
-    setDisable(event.target.value);
   };
 
   const handleUpdateProfile = (name, photoUrl) => {
@@ -65,12 +63,6 @@ const Register = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <button className={!disable ? "btn btn-danger" : "btn btn-primary"}>
-        button
-      </button>
-      <button className={`btn ${!disable ? "btn-danger" : "btn-primary"}`}>
-        button
-      </button>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Your Name</Form.Label>
         <Form.Control type="text" name="name" placeholder="Your name" />
